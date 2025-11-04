@@ -27,13 +27,13 @@ const ToggleButton = ({
 };
 
 export const Header = () => {
-  const { muted, toggleMuted, fxReduced, setFxReduced } = useGameStore((state) => ({
-    muted: state.muted,
-    toggleMuted: state.toggleMuted,
-    fxReduced: state.fxReduced,
-    setFxReduced: state.setFxReduced
-  }));
-  const progressPct = useGameStore((state) => state.progress());
+  const muted = useGameStore((state) => state.muted);
+  const toggleMuted = useGameStore((state) => state.toggleMuted);
+  const fxReduced = useGameStore((state) => state.fxReduced);
+  const setFxReduced = useGameStore((state) => state.setFxReduced);
+  const visitedCount = useGameStore((state) => state.visited.size);
+  const totalSections = 5;
+  const progressPct = Math.round((visitedCount / totalSections) * 100);
   const navigate = useNavigate();
   const location = useLocation();
   const isAccessibleRoute = location.pathname === '/accessible';

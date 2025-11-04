@@ -68,7 +68,14 @@ export const useGameStore = create<GameState>((set, get) => ({
   toggleMuted: () => set((state) => ({ muted: !state.muted })),
   setListView: (value) => set({ listView: value }),
   dismissIntro: () => set({ introVisible: false }),
-  setPlayerPosition: (position) => set({ playerPosition: position }),
+  setPlayerPosition: (position) =>
+    set((state) => {
+      const prev = state.playerPosition;
+      if (Math.abs(prev.x - position.x) < 0.0001 && Math.abs(prev.z - position.z) < 0.0001) {
+        return state;
+      }
+      return { playerPosition: position };
+    }),
   setCurrentZone: (id) => set({ currentZone: id }),
   setJoystick: (joystick) => set({ joystick }),
   requestInteraction: () => set({ interactionRequested: true }),
