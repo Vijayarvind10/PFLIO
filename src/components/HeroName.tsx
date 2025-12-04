@@ -2,22 +2,30 @@ import { motion } from "framer-motion";
 
 export default function HeroName() {
     return (
-        <section className="h-screen flex flex-col items-center justify-center bg-black text-white px-6 relative overflow-hidden">
-            {/* Subtle background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black opacity-50" />
-
+        <section className="mb-16 relative">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="text-center z-10"
+                transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
-                    Vijay Arvind<br />Ramamoorthy
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white">
+                    Vijay Arvind Ramamoorthy
                 </h1>
-                <p className="text-xl md:text-3xl text-neutral-400 font-light tracking-wide">
-                    Backend and systems engineer <span className="mx-2 text-neutral-600">·</span> MS CS, UC Santa Cruz
-                </p>
+                <div className="flex items-center gap-3 text-lg md:text-xl text-neutral-400 font-light mb-8">
+                    <span>Backend & Systems Engineer</span>
+                    <span className="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                    <span>MS CS, UC Santa Cruz</span>
+                </div>
+
+                <div className="p-6 bg-neutral-900/50 border border-neutral-800 rounded-xl backdrop-blur-sm">
+                    <p className="text-neutral-300 leading-relaxed text-lg">
+                        I build high-scale distributed systems and secure backend infrastructure.
+                        With a focus on performance and reliability, I've engineered solutions for
+                        <span className="text-white font-medium mx-1">AWS</span> and
+                        <span className="text-white font-medium mx-1">Samsung</span>,
+                        impacting millions of devices and users.
+                    </p>
+                </div>
             </motion.div>
         </section>
     );
