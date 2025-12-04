@@ -5,11 +5,11 @@ import * as THREE from 'three'
 import { easing } from 'maath'
 
 const cards = [
-    { id: 1, title: 'Chennai', subtitle: 'SRM', url: import.meta.env.BASE_URL + 'AARUSH hackaton.jpg', target: 'journey' },
+    { id: 1, title: 'Chennai', subtitle: 'SRM', url: import.meta.env.BASE_URL + 'aarush_hackathon.jpg', target: 'journey' },
     { id: 2, title: 'Bangalore', subtitle: 'Samsung R&D', url: import.meta.env.BASE_URL + 'kelos.png', target: 'journey' },
     { id: 3, title: 'East Palo Alto', subtitle: 'AWS RDS', url: import.meta.env.BASE_URL + 'AWS.jpeg', target: 'experience' },
     { id: 4, title: 'Santa Cruz', subtitle: 'UCSC', url: import.meta.env.BASE_URL + 'IMG_0204.jpeg', target: 'experience' },
-    { id: 5, title: 'Hackathon', subtitle: 'Wins', url: import.meta.env.BASE_URL + 'Hackaton.jpg', target: 'journey' },
+    { id: 5, title: 'Hackathon', subtitle: 'Wins', url: import.meta.env.BASE_URL + 'hackathon.jpg', target: 'journey' },
     { id: 6, title: 'UniverseOS', subtitle: 'EtherWatch', url: import.meta.env.BASE_URL + 'AWS_.jpeg', target: 'projects' }
 ]
 

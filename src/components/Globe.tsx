@@ -4,8 +4,9 @@ import { OrbitControls, Sphere, Stars, Html } from '@react-three/drei'
 import * as THREE from 'three'
 
 const locations = [
-    { name: 'Chennai', lat: 13.0827, lng: 80.2707, description: 'SRM Institute' },
+    { name: 'Chennai', lat: 13.0827, lng: 80.2707, description: 'SRM & 2 Hackathons' },
     { name: 'Bangalore', lat: 12.9716, lng: 77.5946, description: 'Samsung R&D' },
+    { name: 'Mumbai', lat: 19.0760, lng: 72.8777, description: 'Kelos Hackathon' },
     { name: 'Santa Cruz', lat: 36.9741, lng: -122.0308, description: 'UC Santa Cruz' },
     { name: 'East Palo Alto', lat: 37.4688, lng: -122.1411, description: 'AWS RDS' }
 ]
@@ -25,7 +26,7 @@ function Marker({ position, name, description }: any) {
         <group position={position}>
             <mesh onPointerOver={() => set(false)} onPointerOut={() => set(true)}>
                 <sphereGeometry args={[0.05, 16, 16]} />
-                <meshBasicMaterial color="#3b82f6" />
+                <meshBasicMaterial color="#60a5fa" />
             </mesh>
             <Html distanceFactor={10} className={`transition-opacity duration-300 ${hidden ? 'opacity-0' : 'opacity-100'}`}>
                 <div className="bg-black/80 p-2 rounded border border-blue-500 text-white text-xs w-32 backdrop-blur-md">
@@ -48,20 +49,19 @@ function Earth() {
 
     return (
         <group>
-            {/* Dark Globe */}
+            {/* Visible Blue Globe */}
             <Sphere ref={earthRef} args={[2, 64, 64]}>
                 <meshPhongMaterial
-                    color="#1a1a1a"
-                    emissive="#000000"
-                    specular="#111111"
+                    color="#1e293b"
+                    emissive="#0f172a"
+                    specular="#ffffff"
                     shininess={10}
-                    wireframe={false}
                 />
             </Sphere>
 
-            {/* Wireframe overlay for "Systems" look */}
+            {/* Brighter Wireframe */}
             <Sphere args={[2.01, 32, 32]}>
-                <meshBasicMaterial color="#333" wireframe transparent opacity={0.3} />
+                <meshBasicMaterial color="#3b82f6" wireframe transparent opacity={0.1} />
             </Sphere>
 
             {/* Markers */}
