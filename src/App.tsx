@@ -1,28 +1,20 @@
-import PerplexityLayout from './components/PerplexityLayout'
-import HeroName from './components/HeroName'
-import HackathonGallery from './components/HackathonGallery'
-import ExperienceAndContact from './components/ExperienceAndContact'
-import StatsGrid from './components/StatsGrid'
+import Hero3D from './components/Hero3D'
+import HackathonSection from './components/HackathonSection'
+import AwsSection from './components/AwsSection'
+import SamsungSection from './components/SamsungSection'
+import StatsSection from './components/StatsSection'
+import ContactSection from './components/ContactSection'
 
 function App() {
     return (
-        <PerplexityLayout>
-            <div id="intro" className="pt-8 mb-12">
-                <HeroName />
-            </div>
-
-            <div id="hackathons" className="scroll-mt-24 mb-12">
-                <HackathonGallery />
-            </div>
-
-            <div id="experience" className="scroll-mt-24 mb-12">
-                <ExperienceAndContact />
-            </div>
-
-            <div id="stats" className="scroll-mt-24 pb-20">
-                <StatsGrid />
-            </div>
-        </PerplexityLayout>
+        <main className="bg-black min-h-screen text-white selection:bg-blue-500 selection:text-white">
+            <Hero3D />
+            <HackathonSection />
+            <AwsSection />
+            <SamsungSection />
+            <StatsSection />
+            <ContactSection />
+        </main>
     )
 }
 
