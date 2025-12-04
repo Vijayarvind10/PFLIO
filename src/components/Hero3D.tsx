@@ -5,12 +5,12 @@ import * as THREE from 'three'
 import { easing } from 'maath'
 
 const cards = [
-    { id: 1, title: 'Chennai', subtitle: 'SRM', url: import.meta.env.BASE_URL + 'IMG_0204.jpeg', target: 'journey' },
+    { id: 1, title: 'Chennai', subtitle: 'SRM', url: import.meta.env.BASE_URL + 'AARUSH hackaton.jpg', target: 'journey' },
     { id: 2, title: 'Bangalore', subtitle: 'Samsung R&D', url: import.meta.env.BASE_URL + 'kelos.png', target: 'journey' },
-    { id: 3, title: 'East Palo Alto', subtitle: 'AWS RDS', url: import.meta.env.BASE_URL + 'Image from UCSC Mail.jpg', target: 'experience' },
-    { id: 4, title: 'Santa Cruz', subtitle: 'UCSC', url: import.meta.env.BASE_URL + 'Image from UCSC Mail (1).jpg', target: 'experience' },
-    { id: 5, title: 'Hackathon', subtitle: 'Wins', url: import.meta.env.BASE_URL + 'kelos.JPG', target: 'journey' },
-    { id: 6, title: 'UniverseOS', subtitle: 'EtherWatch', url: import.meta.env.BASE_URL + 'IMG_0204.jpeg', target: 'projects' }
+    { id: 3, title: 'East Palo Alto', subtitle: 'AWS RDS', url: import.meta.env.BASE_URL + 'AWS.jpeg', target: 'experience' },
+    { id: 4, title: 'Santa Cruz', subtitle: 'UCSC', url: import.meta.env.BASE_URL + 'IMG_0204.jpeg', target: 'experience' },
+    { id: 5, title: 'Hackathon', subtitle: 'Wins', url: import.meta.env.BASE_URL + 'Hackaton.jpg', target: 'journey' },
+    { id: 6, title: 'UniverseOS', subtitle: 'EtherWatch', url: import.meta.env.BASE_URL + 'AWS_.jpeg', target: 'projects' }
 ]
 
 function Card({ position, rotation, url, title, subtitle, target }: any) {
@@ -19,7 +19,10 @@ function Card({ position, rotation, url, title, subtitle, target }: any) {
 
     useFrame((_state, delta) => {
         if (ref.current) {
-            easing.damp3(ref.current.scale, hovered ? 1.15 : 1, 0.1, delta)
+            // Smoothly scale up on hover
+            easing.damp3(ref.current.scale, hovered ? 1.2 : 1, 0.1, delta)
+            // Add a subtle floating motion
+            ref.current.position.y = position[1] + Math.sin(_state.clock.elapsedTime + position[0]) * 0.1
         }
     })
 
@@ -36,11 +39,14 @@ function Card({ position, rotation, url, title, subtitle, target }: any) {
             onPointerOut={() => hover(false)}
             onClick={handleClick}
         >
-            <Image url={url} transparent side={THREE.DoubleSide} scale={[1.618 * 2, 2]} toneMapped={false} />
-            <Text position={[0, -1.2, 0.1]} fontSize={0.15} color="white" anchorX="center" anchorY="top">
+            {/* Vertical Aspect Ratio: 2:3 or similar */}
+            <Image url={url} transparent side={THREE.DoubleSide} scale={[2, 3]} toneMapped={false} radius={0.1}>
+                <planeGeometry args={[1, 1, 32, 32]} />
+            </Image>
+            <Text position={[0, -1.7, 0.1]} fontSize={0.15} color="white" anchorX="center" anchorY="top" font="/Inter-Bold.woff">
                 {title}
             </Text>
-            <Text position={[0, -1.4, 0.1]} fontSize={0.1} color="#aaa" anchorX="center" anchorY="top">
+            <Text position={[0, -1.9, 0.1]} fontSize={0.1} color="#aaa" anchorX="center" anchorY="top" font="/Inter-Regular.woff">
                 {subtitle}
             </Text>
         </group>
@@ -52,24 +58,20 @@ function Rig() {
     useFrame((_state, delta) => {
         if (group.current) {
             // Rotate the group slowly
-            group.current.rotation.y += delta * 0.1
+            group.current.rotation.y += delta * 0.05
         }
     })
     return (
         <group ref={group} position={[0, -0.5, 0]}>
             {cards.map((card, i) => {
                 const count = cards.length
-                const radius = 3.5
+                const radius = 4.5
                 const angle = (i / count) * Math.PI * 2
                 const x = Math.sin(angle) * radius
                 const z = Math.cos(angle) * radius
-                // Rotate card to face outward + 180 to face center? No, face outward usually.
-                // Or face the camera when at the front.
-                // If they are arranged in a circle, facing outward means rotation.y = angle.
                 return (
                     <Card
                         key={card.id}
-                        index={i}
                         position={[x, 0, z]}
                         rotation={[0, angle, 0]}
                         url={card.url}
