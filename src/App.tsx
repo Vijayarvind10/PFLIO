@@ -7,15 +7,15 @@ import StatsGrid from './components/StatsGrid'
 function App() {
     return (
         <PerplexityLayout>
-            <div id="intro" className="pt-10">
+            <div id="intro" className="pt-8 mb-12">
                 <HeroName />
             </div>
 
-            <div id="hackathons" className="scroll-mt-24">
+            <div id="hackathons" className="scroll-mt-24 mb-12">
                 <HackathonGallery />
             </div>
 
-            <div id="experience" className="scroll-mt-24">
+            <div id="experience" className="scroll-mt-24 mb-12">
                 <ExperienceAndContact />
             </div>
 

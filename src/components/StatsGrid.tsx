@@ -1,4 +1,4 @@
-
+import { Plus } from 'lucide-react';
 
 const stats = [
     { label: "Hackathon Wins", value: "3", suffix: "" },
@@ -11,17 +11,16 @@ const stats = [
 
 export default function StatsGrid() {
     return (
-        <section className="py-8 border-t border-neutral-800 mt-12">
-            <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-6">By the numbers</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <section className="mt-8 pt-8 border-t border-neutral-800">
+            <div className="flex items-center gap-2 mb-4 text-white font-medium">
+                <Plus size={20} className="text-neutral-400" />
+                <span>Related</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {stats.map((stat, index) => (
-                    <div key={index} className="p-4 rounded-lg bg-neutral-900/30 border border-neutral-800/50 text-center">
-                        <div className="text-2xl font-bold text-white mb-1">
-                            {stat.value}<span className="text-blue-400 text-lg">{stat.suffix}</span>
-                        </div>
-                        <div className="text-xs text-neutral-500 font-medium uppercase tracking-wide">
-                            {stat.label}
-                        </div>
+                    <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-neutral-900/50 hover:bg-neutral-900 border border-neutral-800 cursor-pointer transition-colors group">
+                        <span className="text-neutral-300 text-sm font-medium group-hover:text-blue-400 transition-colors">{stat.label}</span>
+                        <span className="text-neutral-500 text-sm">{stat.value}{stat.suffix}</span>
                     </div>
                 ))}
             </div>
