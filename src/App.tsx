@@ -1,15 +1,17 @@
-import HeroText from './components/HeroText'
-import ScrollyTelling from './components/ScrollyTelling'
+import HeroName from './components/HeroName'
+import HackathonGallery from './components/HackathonGallery'
 import StatsGrid from './components/StatsGrid'
-import Contact from './components/Contact'
+import HackathonSummary from './components/HackathonSummary'
+import ExperienceAndContact from './components/ExperienceAndContact'
 
 function App() {
     return (
         <main className="bg-black min-h-screen text-white selection:bg-blue-500 selection:text-white">
-            <HeroText />
-            <ScrollyTelling />
+            <HeroName />
+            <HackathonGallery />
             <StatsGrid />
-            <Contact />
+            <HackathonSummary />
+            <ExperienceAndContact />
         </main>
     )
 }

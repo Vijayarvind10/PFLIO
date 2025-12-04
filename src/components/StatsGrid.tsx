@@ -1,36 +1,34 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-    { value: "3", label: "National Hackathon Wins" },
-    { value: "50M+", label: "Devices running my code" },
-    { value: "7+", label: "Startups using UniverseOS" },
-    { value: "20+", label: "Engine defects surfaced in RDS" },
-    { value: "1M+", label: "Metrics/min handled" },
-    { value: "10+", label: "Major projects shipped" }
+    { label: 'National Hackathon Wins', value: '3' },
+    { label: 'Devices Running Phoneme Framework', value: '50M+' },
+    { label: 'Engine Defects Surfaced in RDS', value: '20+' },
+    { label: 'Metrics/Min Handled by EtherWatch', value: '1M+' },
+    { label: 'Startups Using UniverseOS', value: '7+' },
+    { label: 'Backend & Systems Projects Shipped', value: '10+' },
 ]
 
 export default function StatsGrid() {
     return (
-        <section id="projects" className="py-32 px-4 bg-neutral-950">
-            <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl font-bold mb-16 text-center">Impact by the Numbers</h2>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    {stats.map((stat, i) => (
+        <section className="py-20 bg-black text-white border-t border-neutral-900">
+            <div className="max-w-6xl mx-auto px-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+                    {stats.map((stat, index) => (
                         <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="bg-neutral-900/50 border border-neutral-800 p-8 rounded-2xl flex flex-col items-center justify-center text-center hover:bg-neutral-800/50 transition-colors"
+                            transition={{ delay: index * 0.1 }}
+                            className="text-center"
                         >
-                            <span className="text-4xl md:text-6xl font-bold text-white mb-2 block">
+                            <div className="text-4xl md:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500">
                                 {stat.value}
-                            </span>
-                            <span className="text-sm md:text-base text-neutral-400 uppercase tracking-wider font-medium">
+                            </div>
+                            <div className="text-sm md:text-base text-neutral-400 font-medium uppercase tracking-wider">
                                 {stat.label}
-                            </span>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
