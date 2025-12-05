@@ -4,7 +4,7 @@ import { ExternalLink, MapPin, FileText } from "lucide-react";
 const publications = [
     {
         title: "End-to-End Optimized Pipeline for Prediction of Protein Folding Kinetics",
-        authors: "Vijay Arvind R., Haribharathi S., Brindha R.",
+        authors: "Vijay Arvind R.",
         publisher: "IEEE",
         location: "Miami, Florida",
         link: "https://ieeexplore.ieee.org/document/10459799",
@@ -12,7 +12,7 @@ const publications = [
     },
     {
         title: "Imbalanced Data Stream Classification using Dynamic Ensemble Selection",
-        authors: "Priya S., Haribharathi Sivakumar, Vijay Arvind R.",
+        authors: "Vijay Arvind R.",
         publisher: "IEEE",
         location: "Canary Islands, Spain",
         link: "https://ieeexplore.ieee.org/document/10253212",
@@ -20,7 +20,7 @@ const publications = [
     },
     {
         title: "Novel Deep Learning Pipeline for Automatic Weapon Detection",
-        authors: "Haribharathi Sivakumar, Vijay Arvind R., Pawan Ragavendhar V., G. Balamurugan",
+        authors: "Vijay Arvind R.",
         publisher: "IEEE",
         location: "Fuji, Japan",
         link: "https://ieeexplore.ieee.org/abstract/document/10487762",
