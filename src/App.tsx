@@ -11,9 +11,9 @@ function App() {
             <RiverBackground />
             <div className="relative z-10">
                 <Hero3D />
-                <HackathonSection />
                 <AwsSection />
                 <SamsungSection />
+                <HackathonSection />
                 <ContactSection />
             </div>
         </main>

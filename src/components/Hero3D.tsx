@@ -59,7 +59,7 @@ function Carousel({ radius = 5 }) {
 
     const handleSelect = (index: number) => {
         // Map index to section ID
-        const sections = ['hackathons', 'aws', 'samsung', 'stats', 'contact']
+        const sections = ['aws', 'samsung', 'hackathons', 'contact']
         // Simple mapping logic: distribute clicks across sections
         const sectionId = sections[index % sections.length]
         const element = document.getElementById(sectionId)
