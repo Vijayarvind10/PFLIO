@@ -6,15 +6,14 @@ export default function HackathonSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                     <h2 className="text-4xl font-bold text-white tracking-tight">Hackathons</h2>
-                    <p className="text-lg text-neutral-400 leading-relaxed">
-                        During my undergraduate studies, I competed in national-level hackathons across India.
-                        My teams secured top finishes in three major events:
-                        <span className="text-white font-medium mx-1">KLEOS</span>,
-                        <span className="text-white font-medium mx-1">HACKWHEEL</span>, and
-                        <span className="text-white font-medium mx-1">HACKSUMMIT 3.0</span>.
+
+                    <p className="text-lg text-neutral-300 leading-relaxed">
+                        During my undergraduate studies, I competed in several <span className="text-white font-semibold">National Level Hackathons</span> across India.
+                        My teams consistently secured top finishes in these intense <span className="text-white font-semibold">36-hour</span> coding marathons.
                     </p>
-                    <p className="text-lg text-neutral-400 leading-relaxed">
-                        We built real-time systems under strict 24-hour deadlines, finishing in the top three out of more than one thousand teams.
+
+                    <p className="text-lg text-neutral-300 leading-relaxed">
+                        We built real-time systems under strict deadlines, finishing in the top three out of more than one thousand teams.
                         Projects included real-time weapon detection and vehicle number plate recognition.
                     </p>
                 </div>

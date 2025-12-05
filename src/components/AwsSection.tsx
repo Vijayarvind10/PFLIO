@@ -22,10 +22,21 @@ export default function AwsSection() {
                             <span>Surfaced 20+ engine defects in a distributed environment.</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <span className="mt-2 w-1.5 h-1.5 bg-neutral-600 rounded-full flex-shrink-0"></span>
-                            <span>Cut test setup time from ~50 minutes to under 5 minutes, significantly accelerating the development cycle.</span>
+                            <span className="text-blue-500 mt-1.5">•</span>
+                            <span>Reduced setup time by <span className="text-white font-medium">94%</span> (30 mins to 2 mins) by automating package installation.</span>
                         </li>
                     </ul>
+
+                    <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/5">
+                        <div>
+                            <div className="text-3xl font-bold text-white">20<span className="text-blue-500">+</span></div>
+                            <div className="text-sm text-neutral-500 uppercase tracking-wider">Defects Found</div>
+                        </div>
+                        <div>
+                            <div className="text-3xl font-bold text-white">1M<span className="text-blue-500">+</span></div>
+                            <div className="text-sm text-neutral-500 uppercase tracking-wider">Metrics/Min</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
