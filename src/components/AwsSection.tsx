@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import { awsImages } from "../data/images";
 
 export default function AwsSection() {
@@ -12,7 +13,13 @@ export default function AwsSection() {
             >
                 <div className="space-y-6">
                     <h2 className="text-4xl font-bold text-white tracking-tight">Amazon Web Services</h2>
-                    <h3 className="text-xl text-blue-400 font-medium">Software Development Engineer Intern</h3>
+                    <div className="flex flex-col gap-1">
+                        <h3 className="text-xl text-blue-400 font-medium">Software Development Engineer Intern</h3>
+                        <div className="flex items-center gap-2 text-neutral-500 text-sm font-medium">
+                            <MapPin size={14} />
+                            <span>East Palo Alto, USA</span>
+                        </div>
+                    </div>
 
                     <ul className="space-y-4 text-neutral-300 leading-relaxed">
                         <li className="flex items-start gap-3">

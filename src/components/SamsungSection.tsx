@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import { samsungImages } from "../data/images";
 
 export default function SamsungSection() {
@@ -12,7 +13,13 @@ export default function SamsungSection() {
             >
                 <div className="order-2 md:order-1 space-y-6">
                     <h2 className="text-4xl font-bold text-white tracking-tight">Samsung R&D</h2>
-                    <h3 className="text-xl text-blue-400 font-medium">Software Engineer</h3>
+                    <div className="flex flex-col gap-1">
+                        <h3 className="text-xl text-blue-400 font-medium">Software Engineer</h3>
+                        <div className="flex items-center gap-2 text-neutral-500 text-sm font-medium">
+                            <MapPin size={14} />
+                            <span>Bengaluru, India</span>
+                        </div>
+                    </div>
 
                     <ul className="space-y-4 text-neutral-300 leading-relaxed">
                         <li className="flex items-start gap-3">

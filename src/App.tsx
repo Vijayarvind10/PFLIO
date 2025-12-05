@@ -6,6 +6,7 @@ import ContactSection from './components/ContactSection'
 import RiverBackground from './components/RiverBackground'
 
 import OpenSourceSection from './components/OpenSourceSection'
+import ResearchSection from './components/ResearchSection'
 import StatsSection from './components/StatsSection'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                 <AwsSection />
                 <SamsungSection />
                 <OpenSourceSection />
+                <ResearchSection />
                 <HackathonSection />
                 <StatsSection />
                 <ContactSection />
