@@ -21,7 +21,7 @@ function FlowingWater({ targetColor }: { targetColor: string }) {
         <Plane args={[100, 100, 64, 64]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -10]}>
             <MeshDistortMaterial
                 ref={materialRef}
-                color={targetColor}
+                // color={targetColor} // Removed to avoid conflict with useFrame
                 attach="material"
                 distort={0.5}
                 speed={2}

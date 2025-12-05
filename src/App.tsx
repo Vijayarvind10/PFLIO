@@ -16,14 +16,14 @@ function App() {
     useEffect(() => {
         const handleScroll = () => {
             const sections = [
-                { id: 'hero', color: '#001e3c' },
-                { id: 'aws', color: '#0f172a' },
-                { id: 'samsung', color: '#1e1b4b' },
-                { id: 'opensource', color: '#171717' },
-                { id: 'research', color: '#312e81' },
-                { id: 'hackathons', color: '#2e1065' },
-                { id: 'stats', color: '#000000' },
-                { id: 'contact', color: '#000000' },
+                { id: 'hero', color: '#001e3c' },       // Deep Blue
+                { id: 'aws', color: '#1e293b' },        // Slate 800 (Lighter)
+                { id: 'samsung', color: '#312e81' },    // Indigo 900 (More Purple)
+                { id: 'opensource', color: '#0f172a' }, // Slate 900
+                { id: 'research', color: '#4c1d95' },   // Violet 900
+                { id: 'hackathons', color: '#581c87' }, // Purple 900
+                { id: 'stats', color: '#000000' },      // Black
+                { id: 'contact', color: '#000000' },    // Black
             ]
 
             const scrollPosition = window.scrollY + window.innerHeight / 2
