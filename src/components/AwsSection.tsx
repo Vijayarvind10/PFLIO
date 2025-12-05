@@ -2,7 +2,7 @@ import { awsImages } from "../data/images";
 
 export default function AwsSection() {
     return (
-        <section id="aws" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-neutral-900">
+        <section id="aws" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/10 backdrop-blur-sm bg-black/20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="order-2 md:order-1">
                     <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800">

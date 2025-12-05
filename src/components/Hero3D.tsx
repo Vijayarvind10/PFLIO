@@ -127,9 +127,9 @@ function Title3D() {
 
 export default function Hero3D() {
     return (
-        <section className="h-screen w-full bg-black relative overflow-hidden">
+        <section className="h-screen w-full relative overflow-hidden">
             <div className="absolute inset-0 z-0">
-                <Canvas camera={{ position: [0, 0, 12], fov: 35 }}>
+                <Canvas camera={{ position: [0, 0, 12], fov: 35 }} gl={{ alpha: true }}>
                     <ambientLight intensity={0.5} />
                     <Environment preset="city" />
                     <Carousel />

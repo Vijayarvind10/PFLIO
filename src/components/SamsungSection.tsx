@@ -2,7 +2,7 @@ import { samsungImages } from "../data/images";
 
 export default function SamsungSection() {
     return (
-        <section id="samsung" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-neutral-900">
+        <section id="samsung" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/10 backdrop-blur-sm bg-black/20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                     <h2 className="text-4xl font-bold text-white tracking-tight">Samsung R&D</h2>
