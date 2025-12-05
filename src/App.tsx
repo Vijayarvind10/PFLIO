@@ -5,15 +5,20 @@ import SamsungSection from './components/SamsungSection'
 import ContactSection from './components/ContactSection'
 import RiverBackground from './components/RiverBackground'
 
+import OpenSourceSection from './components/OpenSourceSection'
+import StatsSection from './components/StatsSection'
+
 function App() {
     return (
-        <main className="min-h-screen text-white selection:bg-blue-500 selection:text-white relative">
+        <main className="bg-black min-h-screen text-white selection:bg-blue-500/30">
             <RiverBackground />
             <div className="relative z-10">
                 <Hero3D />
                 <AwsSection />
                 <SamsungSection />
+                <OpenSourceSection />
                 <HackathonSection />
+                <StatsSection />
                 <ContactSection />
             </div>
         </main>

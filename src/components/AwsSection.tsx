@@ -1,25 +1,27 @@
+import { motion } from "framer-motion";
 import { awsImages } from "../data/images";
 
 export default function AwsSection() {
     return (
-        <section id="aws" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/10 backdrop-blur-sm bg-black/20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="order-2 md:order-1">
-                    <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800">
-                        {awsImages[0] && <img src={awsImages[0]} alt="AWS" className="w-full h-full object-cover opacity-80" />}
-                    </div>
-                </div>
-                <div className="space-y-6 order-1 md:order-2">
+        <section id="aws" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+            >
+                <div className="space-y-6">
                     <h2 className="text-4xl font-bold text-white tracking-tight">Amazon Web Services</h2>
-                    <h3 className="text-xl text-blue-400 font-medium">RDS PostgreSQL Team</h3>
-                    <ul className="space-y-4 text-lg text-neutral-400">
+                    <h3 className="text-xl text-blue-400 font-medium">Software Development Engineer Intern</h3>
+
+                    <ul className="space-y-4 text-neutral-300 leading-relaxed">
                         <li className="flex items-start gap-3">
-                            <span className="mt-2 w-1.5 h-1.5 bg-neutral-600 rounded-full flex-shrink-0"></span>
-                            <span>Built a Java-based SQL fuzzer and distributed test runner for the RDS PostgreSQL engine.</span>
+                            <span className="text-blue-500 mt-1.5">•</span>
+                            <span>Designed and implemented a <span className="text-white font-medium">Chaos Engineering</span> framework to test system resilience.</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <span className="mt-2 w-1.5 h-1.5 bg-neutral-600 rounded-full flex-shrink-0"></span>
-                            <span>Surfaced 20+ engine defects in a distributed environment.</span>
+                            <span className="text-blue-500 mt-1.5">•</span>
+                            <span>Surfaced <span className="text-white font-medium">20+ engine defects</span> in a distributed environment.</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-blue-500 mt-1.5">•</span>
@@ -38,7 +40,12 @@ export default function AwsSection() {
                         </div>
                     </div>
                 </div>
-            </div>
+                <div className="relative group">
+                    <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
+                        {awsImages[0] && <img src={awsImages[0]} alt="AWS" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />}
+                    </div>
+                </div>
+            </motion.div>
         </section>
     );
 }

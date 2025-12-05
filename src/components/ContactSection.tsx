@@ -6,13 +6,26 @@ export default function ContactSection() {
             <h2 className="text-4xl font-bold text-white tracking-tight mb-12">Contact</h2>
 
             <div className="flex flex-wrap justify-center gap-8">
-                <a href="mailto:vijayarvind10@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
+                <a
+                    href="mailto:vijayarvind10@gmail.com"
+                    className="px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+                >
                     Email
                 </a>
-                <a href="https://www.linkedin.com/in/vijayarvind/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <a
+                    href="https://www.linkedin.com/in/vijayarvind/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+                >
                     LinkedIn
                 </a>
-                <a href="https://github.com/Vijayarvind10" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <a
+                    href="https://github.com/Vijayarvind10"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+                >
                     GitHub
                 </a>
             </div>

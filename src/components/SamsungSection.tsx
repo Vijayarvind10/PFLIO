@@ -1,20 +1,27 @@
+import { motion } from "framer-motion";
 import { samsungImages } from "../data/images";
 
 export default function SamsungSection() {
     return (
-        <section id="samsung" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/10 backdrop-blur-sm bg-black/20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
+        <section id="samsung" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+            >
+                <div className="order-2 md:order-1 space-y-6">
                     <h2 className="text-4xl font-bold text-white tracking-tight">Samsung R&D</h2>
-                    <h3 className="text-xl text-blue-400 font-medium">On-Device AI</h3>
-                    <ul className="space-y-4 text-lg text-neutral-400">
+                    <h3 className="text-xl text-blue-400 font-medium">Software Engineer</h3>
+
+                    <ul className="space-y-4 text-neutral-300 leading-relaxed">
                         <li className="flex items-start gap-3">
-                            <span className="mt-2 w-1.5 h-1.5 bg-neutral-600 rounded-full flex-shrink-0"></span>
-                            <span>Developed an on-device phoneme framework in C++ for speech recognition.</span>
+                            <span className="text-blue-500 mt-1.5">•</span>
+                            <span>Developed on-device AI features for Galaxy devices using C++ and Android.</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <span className="mt-2 w-1.5 h-1.5 bg-neutral-600 rounded-full flex-shrink-0"></span>
-                            <span>Shipped to 50M+ devices, optimizing performance for low-power scenarios.</span>
+                            <span className="text-blue-500 mt-1.5">•</span>
+                            <span>Shipped to <span className="text-white font-medium">50M+ devices</span>, optimizing performance for low-power scenarios.</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-blue-500 mt-1.5">•</span>
@@ -29,12 +36,12 @@ export default function SamsungSection() {
                         </div>
                     </div>
                 </div>
-                <div className="order-1 md:order-2">
-                    <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center">
-                        {samsungImages[0] && <img src={samsungImages[0]} alt="Samsung" className="w-full h-full object-cover opacity-80" />}
+                <div className="order-1 md:order-2 relative group">
+                    <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
+                        {samsungImages[0] && <img src={samsungImages[0]} alt="Samsung" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

@@ -52,8 +52,8 @@ function Carousel({ radius = 5 }) {
 
     useFrame((_, delta) => {
         if (groupRef.current) {
-            // Slow rotation
-            groupRef.current.rotation.y += delta * 0.1
+            // Slow rotation with easing
+            groupRef.current.rotation.y += delta * 0.05
         }
     })
 
@@ -95,7 +95,7 @@ function Title3D() {
                     color="white"
                     anchorX="center"
                     anchorY="middle"
-                    position={[0, 0.2, 0]}
+                    position={[0, 0.3, 0]}
                 >
                     Vijay Arvind
                 </Text>
@@ -106,7 +106,7 @@ function Title3D() {
                     color="white"
                     anchorX="center"
                     anchorY="middle"
-                    position={[0, -0.6, 0]}
+                    position={[0, -0.7, 0]}
                 >
                     Ramamoorthy
                 </Text>
@@ -116,7 +116,7 @@ function Title3D() {
                     color="#a3a3a3"
                     anchorX="center"
                     anchorY="middle"
-                    position={[0, -1.4, 0]}
+                    position={[0, -1.6, 0]}
                 >
                     Backend & Systems Engineer · MS CS, UC Santa Cruz
                 </Text>
@@ -129,6 +129,9 @@ export default function Hero3D() {
     return (
         <section className="h-screen w-full relative overflow-hidden">
             <div className="absolute inset-0 z-0">
+                {/* Subtle Gradient Overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent z-0 pointer-events-none" />
+
                 <Canvas camera={{ position: [0, 0, 12], fov: 35 }} gl={{ alpha: true }}>
                     <ambientLight intensity={0.5} />
                     <Environment preset="city" />
