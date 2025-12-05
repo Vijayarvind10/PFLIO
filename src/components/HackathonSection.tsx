@@ -20,8 +20,8 @@ export default function HackathonSection() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                     {hackathonImages.slice(0, 4).map((img, i) => (
-                        <div key={i} className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800">
-                            <img src={img} alt="Hackathon" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
+                        <div key={i} className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center">
+                            <img src={img} alt="Hackathon" className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity" />
                         </div>
                     ))}
                 </div>

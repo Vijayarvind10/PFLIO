@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Image, Environment } from '@react-three/drei'
+import { Image, Text, Environment, Float } from '@react-three/drei'
 import * as THREE from 'three'
 import { hackathonImages, awsImages, samsungImages } from '../data/images'
 
@@ -84,6 +84,47 @@ function Carousel({ radius = 5 }) {
     )
 }
 
+function Title3D() {
+    return (
+        <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
+            <group position={[0, 0, 0]}>
+                <Text
+                    font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
+                    fontSize={0.8}
+                    letterSpacing={-0.05}
+                    color="white"
+                    anchorX="center"
+                    anchorY="middle"
+                    position={[0, 0.2, 0]}
+                >
+                    Vijay Arvind
+                </Text>
+                <Text
+                    font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
+                    fontSize={0.8}
+                    letterSpacing={-0.05}
+                    color="white"
+                    anchorX="center"
+                    anchorY="middle"
+                    position={[0, -0.6, 0]}
+                >
+                    Ramamoorthy
+                </Text>
+                <Text
+                    font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
+                    fontSize={0.25}
+                    color="#a3a3a3"
+                    anchorX="center"
+                    anchorY="middle"
+                    position={[0, -1.4, 0]}
+                >
+                    Backend & Systems Engineer · MS CS, UC Santa Cruz
+                </Text>
+            </group>
+        </Float>
+    )
+}
+
 export default function Hero3D() {
     return (
         <section className="h-screen w-full bg-black relative overflow-hidden">
@@ -92,22 +133,11 @@ export default function Hero3D() {
                     <ambientLight intensity={0.5} />
                     <Environment preset="city" />
                     <Carousel />
+                    <Title3D />
                 </Canvas>
             </div>
 
-            {/* Overlay Text */}
-            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
-                <div className="text-center space-y-4 bg-black/30 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
-                        Vijay Arvind Ramamoorthy
-                    </h1>
-                    <p className="text-xl md:text-2xl text-neutral-300 font-light tracking-wide">
-                        Backend and systems engineer <span className="mx-2 text-neutral-500">·</span> MS CS, UC Santa Cruz
-                    </p>
-                </div>
-            </div>
-
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-neutral-500 text-sm animate-bounce">
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-neutral-500 text-sm animate-bounce pointer-events-none">
                 Scroll to explore
             </div>
         </section>
