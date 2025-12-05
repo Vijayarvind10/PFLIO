@@ -16,14 +16,14 @@ function FlowingWater() {
     })
 
     return (
-        <Plane args={[20, 20, 64, 64]} rotation={[-Math.PI / 2.5, 0, 0]} position={[0, -2, -5]}>
+        <Plane args={[100, 100, 64, 64]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -10]}>
             <MeshDistortMaterial
-                color="#0a0a0a"
+                color="#001e3c"
                 attach="material"
-                distort={0.6}
-                speed={1.5}
+                distort={0.5}
+                speed={2}
                 roughness={0.2}
-                metalness={0.9}
+                metalness={0.8}
                 side={THREE.DoubleSide}
             />
         </Plane>
@@ -32,11 +32,12 @@ function FlowingWater() {
 
 export default function RiverBackground() {
     return (
-        <div className="fixed inset-0 z-[-1] bg-black">
-            <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-                <ambientLight intensity={0.5} />
-                <pointLight position={[10, 10, 10]} intensity={1} color="#4fa1db" />
-                <pointLight position={[-10, -10, -10]} intensity={0.5} color="#a600ff" />
+        <div className="fixed inset-0 z-[-1] bg-[#000510]">
+            <Canvas camera={{ position: [0, 5, 10], fov: 60 }}>
+                <ambientLight intensity={0.8} />
+                <pointLight position={[20, 20, 20]} intensity={2} color="#4fa1db" />
+                <pointLight position={[-20, -10, -10]} intensity={1} color="#00d9ff" />
+                <directionalLight position={[0, 10, 0]} intensity={1} color="#ffffff" />
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
                 <FlowingWater />
             </Canvas>
