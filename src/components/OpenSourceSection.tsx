@@ -1,7 +1,35 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const terminalSteps = [
+    { type: "command", text: "$ pip install universeos", delay: 0 },
+    { type: "output", text: "Downloading universeos-0.1.0...", delay: 800 },
+    { type: "output", text: "Successfully installed universeos-0.1.0", delay: 1200 },
+    { type: "command", text: "$ python", delay: 2000 },
+    { type: "python", text: ">>> import universeos", delay: 2800 },
+    { type: "python", text: ">>> agent = universeos.Agent()", delay: 3400 },
+    { type: "python", text: '>>> result = agent.run("Analyze sales data")', delay: 4200 },
+    { type: "output", text: "🤖 Agent analyzing sales data...", delay: 5000 },
+    { type: "output", text: "✓ Loaded 10,000 records", delay: 5800 },
+    { type: "output", text: "✓ Computed metrics: Revenue +23%, Users +45%", delay: 6600 },
+    { type: "output", text: "✓ Generated insights and visualization", delay: 7400 },
+    { type: "success", text: "✨ Task completed in 2.3s", delay: 8200 },
+];
 
 export default function OpenSourceSection() {
+    const [visibleLines, setVisibleLines] = useState(0);
+
+    useEffect(() => {
+        if (visibleLines < terminalSteps.length) {
+            const nextStep = terminalSteps[visibleLines];
+            const timer = setTimeout(() => {
+                setVisibleLines((prev) => prev + 1);
+            }, nextStep.delay);
+            return () => clearTimeout(timer);
+        }
+    }, [visibleLines]);
+
     return (
         <section id="opensource" className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5">
             <motion.div
@@ -37,13 +65,35 @@ export default function OpenSourceSection() {
                         <div className="w-3 h-3 rounded-full bg-green-500" />
                         <span className="ml-2 text-xs">bash</span>
                     </div>
-                    <div className="space-y-2">
-                        <p><span className="text-green-400">$</span> pip install universeos</p>
-                        <p className="text-neutral-500">Downloading universeos-0.1.0...</p>
-                        <p className="text-neutral-500">Successfully installed universeos-0.1.0</p>
-                        <p><span className="text-green-400">$</span> python</p>
-                        <p><span className="text-blue-400">&gt;&gt;&gt;</span> import universeos</p>
-                        <p><span className="text-blue-400">&gt;&gt;&gt;</span> agent = universeos.Agent()</p>
+                    <div className="space-y-2 min-h-[300px]">
+                        {terminalSteps.slice(0, visibleLines).map((step, index) => (
+                            <motion.p
+                                key={index}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.3 }}
+                                className={
+                                    step.type === "command"
+                                        ? "text-white"
+                                        : step.type === "python"
+                                            ? "text-white"
+                                            : step.type === "success"
+                                                ? "text-green-400 font-semibold"
+                                                : "text-neutral-500"
+                                }
+                            >
+                                {step.type === "command" && <span className="text-green-400">$</span>}
+                                {step.type === "python" && <span className="text-blue-400">&gt;&gt;&gt;</span>}
+                                {step.type === "command" || step.type === "python" ? ` ${step.text.split(" ").slice(1).join(" ")}` : step.text}
+                            </motion.p>
+                        ))}
+                        {visibleLines < terminalSteps.length && (
+                            <motion.span
+                                animate={{ opacity: [1, 0, 1] }}
+                                transition={{ repeat: Infinity, duration: 1 }}
+                                className="inline-block w-2 h-4 bg-white"
+                            />
+                        )}
                     </div>
                 </div>
             </motion.div>
