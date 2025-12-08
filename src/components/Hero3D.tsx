@@ -35,7 +35,7 @@ export default function Hero3D() {
                 >
                     <p>
                         Hey there! I build software and do research. In my free time, I play guitar and mridangam
-                        (an Indian percussion instrument). I'm a big FC Barcelona fan. Messi is a legend. 🎸⚽
+                        (an Indian percussion instrument). I'm a big FC Barcelona fan.
                     </p>
                 </motion.div>
             </div>
