@@ -47,10 +47,14 @@ export default function AwsSection() {
                         </div>
                     </div>
                 </div>
-                <div className="relative group">
-                    <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
-                        {awsImages[0] && <img src={awsImages[0]} alt="AWS" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />}
-                    </div>
+                <div className="space-y-4">
+                    {awsImages.map((image, index) => (
+                        <div key={index} className="relative group">
+                            <div className="aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
+                                <img src={image} alt={`AWS ${index + 1}`} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </motion.div>
         </section>
