@@ -10,23 +10,35 @@ export default function Hero3D() {
 
     return (
         <section className="h-screen w-full relative overflow-hidden flex items-center justify-center">
-            <div className="text-center z-10 px-6">
+            <div className="text-center z-10 px-6 max-w-4xl mx-auto">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tight"
+                    className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight"
                 >
-                    Vijay Arvind
+                    Vijay Arvind Ramamoorthy
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl md:text-2xl text-neutral-400"
+                    className="text-xl md:text-2xl text-neutral-400 mb-6"
                 >
                     Software Engineer & Researcher
                 </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="text-base md:text-lg text-neutral-300 leading-relaxed"
+                >
+                    <p>
+                        Hey there! When I'm not engineering software or diving into research, you'll find me jamming on my guitar
+                        or playing the mridangam (an Indian percussion instrument). Oh, and I'm a huge FC Barcelona fan—Messi is
+                        an absolute legend! 🎸⚽
+                    </p>
+                </motion.div>
             </div>
 
             {/* Scroll Indicator */}
