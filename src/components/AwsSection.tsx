@@ -24,15 +24,15 @@ export default function AwsSection() {
                     <ul className="space-y-4 text-neutral-300 leading-relaxed">
                         <li className="flex items-start gap-3">
                             <span className="text-blue-500 mt-1.5">•</span>
-                            <span>Designed and implemented a <span className="text-white font-medium">Chaos Engineering</span> framework to test system resilience.</span>
+                            <span>Built a <span className="text-white font-medium">chaos engineering framework</span> to test system resilience by injecting failures (crashed nodes, network delays, resource exhaustion) into distributed systems. <span className="text-blue-400">Now in production.</span></span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-blue-500 mt-1.5">•</span>
-                            <span>Surfaced <span className="text-white font-medium">20+ engine defects</span> in a distributed environment.</span>
+                            <span>Identified <span className="text-white font-medium">20+ critical defects</span> in the database engine that only surfaced under failure conditions.</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-blue-500 mt-1.5">•</span>
-                            <span>Reduced setup time by <span className="text-white font-medium">94%</span> (30 mins to 2 mins) by automating package installation.</span>
+                            <span>Reduced cluster setup time by <span className="text-white font-medium">94%</span> (30 mins to 2 mins) by automating package installation and configuration.</span>
                         </li>
                     </ul>
 

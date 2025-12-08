@@ -50,6 +50,24 @@ export default function OpenSourceSection() {
                             optimize their AI costs and quality.
                         </p>
 
+                        <div className="space-y-3">
+                            <p className="text-sm font-semibold text-blue-400">Systems Engineering</p>
+                            <ul className="text-sm text-neutral-400 space-y-2">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-blue-500 mt-1">•</span>
+                                    <span><span className="text-white">C++17 gateway</span> with async I/O for high-throughput HTTP proxying</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-blue-500 mt-1">•</span>
+                                    <span><span className="text-white">Distributed control plane</span> (registry, policy engine, metrics pipeline)</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-blue-500 mt-1">•</span>
+                                    <span><span className="text-white">Zero-latency shadowing</span> via fire-and-forget async requests</span>
+                                </li>
+                            </ul>
+                        </div>
+
                         <a
                             href="https://pypi.org/project/universeos/0.1.0/"
                             target="_blank"
