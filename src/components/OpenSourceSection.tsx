@@ -4,17 +4,18 @@ import { useState, useEffect } from "react";
 
 const terminalSteps = [
     { type: "command", text: "$ pip install universeos", delay: 0 },
-    { type: "output", text: "Downloading universeos-0.1.0...", delay: 800 },
-    { type: "output", text: "Successfully installed universeos-0.1.0", delay: 1200 },
-    { type: "command", text: "$ python", delay: 2000 },
-    { type: "python", text: ">>> import universeos", delay: 2800 },
-    { type: "python", text: ">>> agent = universeos.Agent()", delay: 3400 },
-    { type: "python", text: '>>> result = agent.run("Analyze sales data")', delay: 4200 },
-    { type: "output", text: "🤖 Agent analyzing sales data...", delay: 5000 },
-    { type: "output", text: "✓ Loaded 10,000 records", delay: 5800 },
-    { type: "output", text: "✓ Computed metrics: Revenue +23%, Users +45%", delay: 6600 },
-    { type: "output", text: "✓ Generated insights and visualization", delay: 7400 },
-    { type: "success", text: "✨ Task completed in 2.3s", delay: 8200 },
+    { type: "output", text: "Successfully installed universeos-0.1.3", delay: 400 },
+    { type: "command", text: "$ python", delay: 800 },
+    { type: "python", text: ">>> from universeos import universe_shadow", delay: 1200 },
+    { type: "python", text: ">>> @universe_shadow", delay: 1600 },
+    { type: "python", text: '>>> def get_response(query): ...', delay: 2000 },
+    { type: "python", text: '>>> result = get_response("Reset password?")', delay: 2400 },
+    { type: "output", text: "→ PRIMARY: GPT-4 responding...", delay: 2900 },
+    { type: "output", text: "→ SHADOW: Claude-3.5 (background)", delay: 3200 },
+    { type: "output", text: "→ SHADOW: Custom model (background)", delay: 3500 },
+    { type: "success", text: '✓ User sees: "Click Forgot Password..."', delay: 4000 },
+    { type: "output", text: "📊 Logged: 3 responses, latency, cost", delay: 4500 },
+    { type: "comment", text: "# Zero risk. Zero latency. Real data.", delay: 5200 },
 ];
 
 export default function OpenSourceSection() {
@@ -44,7 +45,9 @@ export default function OpenSourceSection() {
                     <div className="space-y-6">
                         <h3 className="text-2xl font-semibold text-white">UniverseOS</h3>
                         <p className="text-lg text-neutral-300 leading-relaxed">
-                            A powerful Python SDK for building AI agents. Currently used by <span className="text-white font-semibold">7 startups</span> to power their autonomous workflows.
+                            A Python SDK for testing AI models with zero risk. Shadow production traffic to compare
+                            GPT-4, Claude, and custom models. Used by <span className="text-white font-semibold">7 startups</span> to
+                            optimize their AI costs and quality.
                         </p>
 
                         <a
@@ -71,7 +74,7 @@ export default function OpenSourceSection() {
                                 key={index}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ duration: 0.3 }}
+                                transition={{ duration: 0.2 }}
                                 className={
                                     step.type === "command"
                                         ? "text-white"
@@ -79,7 +82,9 @@ export default function OpenSourceSection() {
                                             ? "text-white"
                                             : step.type === "success"
                                                 ? "text-green-400 font-semibold"
-                                                : "text-neutral-500"
+                                                : step.type === "comment"
+                                                    ? "text-blue-400 italic"
+                                                    : "text-neutral-500"
                                 }
                             >
                                 {step.type === "command" && <span className="text-green-400">$</span>}
@@ -90,7 +95,7 @@ export default function OpenSourceSection() {
                         {visibleLines < terminalSteps.length && (
                             <motion.span
                                 animate={{ opacity: [1, 0, 1] }}
-                                transition={{ repeat: Infinity, duration: 1 }}
+                                transition={{ repeat: Infinity, duration: 0.8 }}
                                 className="inline-block w-2 h-4 bg-white"
                             />
                         )}
