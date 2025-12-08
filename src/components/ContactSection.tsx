@@ -7,13 +7,13 @@ export default function ContactSection() {
 
             <div className="flex flex-wrap justify-center gap-8">
                 <a
-                    href="mailto:vijayarvind10@gmail.com"
+                    href="mailto:vijayarvind27@gmail.com"
                     className="px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
                 >
                     Email
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/vijayarvind/"
+                    href="https://www.linkedin.com/in/vijay-arvind-ramamoorthy-b04b561b8/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"

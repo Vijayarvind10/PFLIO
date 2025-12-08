@@ -4,6 +4,7 @@ import AwsSection from './components/AwsSection'
 import SamsungSection from './components/SamsungSection'
 import ContactSection from './components/ContactSection'
 import VideoBackground from './components/VideoBackground'
+import TimelineSection from './components/TimelineSection'
 
 import OpenSourceSection from './components/OpenSourceSection'
 import ResearchSection from './components/ResearchSection'
@@ -17,6 +18,7 @@ function App() {
                 <div id="hero">
                     <Hero3D />
                 </div>
+                <TimelineSection />
                 <AwsSection />
                 <SamsungSection />
                 <OpenSourceSection />
