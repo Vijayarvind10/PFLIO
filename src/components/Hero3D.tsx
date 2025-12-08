@@ -34,9 +34,8 @@ export default function Hero3D() {
                     className="text-base md:text-lg text-neutral-300 leading-relaxed"
                 >
                     <p>
-                        Hey there! When I'm not engineering software or diving into research, you'll find me jamming on my guitar
-                        or playing the mridangam (an Indian percussion instrument). Oh, and I'm a huge FC Barcelona fan—Messi is
-                        an absolute legend! 🎸⚽
+                        Hey there! I build software and do research. In my free time, I play guitar and mridangam
+                        (an Indian percussion instrument). I'm a big FC Barcelona fan. Messi is a legend. 🎸⚽
                     </p>
                 </motion.div>
             </div>
