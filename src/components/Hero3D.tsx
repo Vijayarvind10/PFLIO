@@ -25,7 +25,7 @@ function FloatingText() {
         <group ref={textRef}>
             <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
                 <Text
-                    font="/fonts/Inter-Bold.ttf"
+                    font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
                     fontSize={1.2}
                     color="white"
                     anchorX="center"
@@ -43,7 +43,7 @@ function FloatingText() {
                     />
                 </Text>
                 <Text
-                    font="/fonts/Inter-Regular.ttf"
+                    font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
                     fontSize={0.4}
                     color="#94a3b8"
                     anchorX="center"

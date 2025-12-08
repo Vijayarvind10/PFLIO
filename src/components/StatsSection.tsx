@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const stats = [
-    { label: "Hackathon Wins", value: 3, suffix: "", duration: 2 },
+    { label: "Internships", value: 3, suffix: "", duration: 2 },
+    { label: "Hackathons Won", value: 3, suffix: "", duration: 2 },
+    { label: "Research Papers", value: 3, suffix: "", duration: 2 },
     { label: "Devices Impacted", value: 50, suffix: "M+", duration: 2.5 },
     { label: "Defects Found", value: 20, suffix: "+", duration: 2 },
-    { label: "Metrics/Min", value: 1, suffix: "M+", duration: 2 },
-    { label: "Startups", value: 7, suffix: "+", duration: 2 },
-    { label: "Projects", value: 10, suffix: "+", duration: 2 },
+    { label: "Startups Using My OS", value: 7, suffix: "", duration: 2 },
 ];
 
 function CountUp({ end, duration, suffix }: { end: number, duration: number, suffix: string }) {
