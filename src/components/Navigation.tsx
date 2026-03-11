@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -14,7 +14,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
   const [hidden, setHidden] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const lastScrollYRef = useRef(0)
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
@@ -23,12 +23,12 @@ export default function Navigation() {
       const maxScroll = document.body.scrollHeight - window.innerHeight
       setProgress(maxScroll > 0 ? currentY / maxScroll : 0)
       setScrolled(currentY > 50)
-      setHidden(currentY > lastScrollY && currentY > 300)
-      setLastScrollY(currentY)
+      setHidden(currentY > lastScrollYRef.current && currentY > 300)
+      lastScrollYRef.current = currentY
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   const handleClick = (href: string) => {
     setMobileOpen(false)

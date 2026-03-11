@@ -12,22 +12,23 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          if (intervalRef.current) clearInterval(intervalRef.current)
-          setTimeout(() => {
-            setVisible(false)
-            setTimeout(onComplete, 600)
-          }, 400)
-          return 100
-        }
-        return prev + Math.random() * 12 + 3
-      })
+      setProgress((prev) => (prev >= 100 ? 100 : prev + Math.random() * 12 + 3))
     }, 80)
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
-  }, [onComplete])
+  }, [])
+
+  useEffect(() => {
+    if (progress >= 100) {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+      const t1 = setTimeout(() => {
+        setVisible(false)
+        setTimeout(onComplete, 600)
+      }, 400)
+      return () => clearTimeout(t1)
+    }
+  }, [progress, onComplete])
 
   return (
     <AnimatePresence>
